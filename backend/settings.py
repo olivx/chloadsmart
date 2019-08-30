@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+
 from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -124,20 +125,21 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
-GOOGLE_MAP_API_KEY =  config("GOOGLE_AAP_KEY")
+GOOGLE_MAP_API_KEY = config("GOOGLE_AAP_KEY")
 MAP_WIDGETS = {
     "GooglePointFieldWidget": (
         ("zoom", 15),
         ("size", "320x320"),
         ("mapCenterLocationName", "New York"),
-        ("GooglePlaceAutocompleteOptions", {'componentRestrictions': {'country': 'us'}}),
+        (
+            "GooglePlaceAutocompleteOptions",
+            {"componentRestrictions": {"country": "us"}},
+        ),
         ("markerFitZoom", 12),
     ),
-     "GoogleStaticMapMarkerSettings": (
-        ("color", "green"),
-    ),
+    "GoogleStaticMapMarkerSettings": (("color", "green"),),
     "LANGUAGE": "en",
-    "GOOGLE_MAP_API_KEY": GOOGLE_MAP_API_KEY
+    "GOOGLE_MAP_API_KEY": GOOGLE_MAP_API_KEY,
 }

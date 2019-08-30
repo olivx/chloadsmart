@@ -1,10 +1,13 @@
 # from django.contrib import admin
+from django.conf import settings
 from django.contrib.gis import admin
-from .models import Cargo, Truck
 from django.contrib.gis.db import models
 from leaflet.admin import LeafletGeoAdmin
-from mapwidgets.widgets import GooglePointFieldWidget, GoogleStaticOverlayMapWidget, GoogleStaticMapWidget
-from django.conf import settings
+from mapwidgets.widgets import (GooglePointFieldWidget, GoogleStaticMapWidget,
+                                GoogleStaticOverlayMapWidget)
+
+from .models import Cargo, Truck
+
 # Register your models here.
 
 
@@ -34,5 +37,3 @@ class TruckGeoAdmin(admin.ModelAdmin):
             "widget": GooglePointFieldWidget
         }
     }
-
-

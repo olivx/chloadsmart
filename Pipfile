@@ -7,11 +7,20 @@ verify_ssl = true
 ipdb = "*"
 ipython = "*"
 jupyter = "*"
+django-debug-toolbar = "*"
+coverage = "*"
+flake8 = "*"
+isort = "*"
+black = "==19.3b0"
+pylint = "*"
 
 [packages]
 django = "*"
 psycopg2-binary = "*"
 django-extensions = "*"
+django-leaflet = "*"
+django-map-widgets = "*"
+python-decouple = "*"
 
 [requires]
 python_version = "3.7"

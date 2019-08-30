@@ -2,4 +2,4 @@
 .vscode
 .ipynb_checkpoints
 *.ipynb
-.venv
+.env

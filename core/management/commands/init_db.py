@@ -1,9 +1,12 @@
-from django.core.management.base import BaseCommand
-from django.contrib.gis.geos import fromstr
-from django.conf import settings
 import csv
 import pathlib
+
+from django.conf import settings
+from django.contrib.gis.geos import fromstr
+from django.core.management.base import BaseCommand
+
 from core.models import Cargo, Trucks
+
 
 class Command(BaseCommand):
     help = 'Send test emails'
@@ -12,7 +15,6 @@ class Command(BaseCommand):
         self._path =  pathlib.Path(settings.BASE_DIR).joinpath("data")
 
     def handle(self, *args, **options):
-
         cargos = Cargo.objects.values_list("product",flat=True)
         trucks = Trucks.objects.values_list("truck",flat=True)
 
